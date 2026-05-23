@@ -86,6 +86,7 @@ export class GitHubOidcProxyConstruct extends Construct {
       entry: path.join(handlersDir, 'token.ts'),
       handler: 'handler',
       runtime: lambda.Runtime.NODEJS_22_X,
+      memorySize: 1024,
       timeout: Duration.seconds(30),
       environment: {
         ISSUER_URL: issuerUrl,
